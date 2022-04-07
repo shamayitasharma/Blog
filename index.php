@@ -18,7 +18,16 @@
 <body>
 
    <div class="container mt-5">
-        <div>
+
+        <?php if(isset($_REQUEST['info'])){?>
+            <?php if($_REQUEST['info'] == "added"){?> 
+                <div class="alert alert-success" role="alert">
+                    Post has been added successfully
+                </div>
+            <?php } ?>
+        <?php }?>
+
+        <div class="text-center">
             <a href="create.php" class="btn btn-outline-dark">+Create a new post</a>
         </div>
    </div>
