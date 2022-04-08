@@ -18,11 +18,14 @@
 <body>
 
    <div class="container mt-5">
-        <form method="POST">
-            <input type="text" placeholder="Blog Title" class="form-control my-3 bg-dark text-white text-center" name="title">
-            <textarea name="content" class="form-control my-3 bg-dark text-white" cols="30" rows="10"></textarea>
-            <button class="btn btn-dark" name="new_post">Add Post</button>
-        </form>
+        <?php foreach($query as $q){ ?>
+            <form method="POST">
+                <input type="text" hidden value='<?php echo $q['id']?>' name="id">
+                <input type="text" placeholder="Blog Title" class="form-control my-3 bg-dark text-white text-center" name="title" value="<?php echo $q['title']?>">
+                <textarea name="content" class="form-control my-3 bg-dark text-white" cols="30" rows="10"><?php echo $q['content']?></textarea>
+                <button class="btn btn-dark" name="update">Update</button>
+            </form>
+        <?php } ?>    
    </div>
 
     <!-- Bootstrap JS -->
